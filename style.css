@@ -1,3 +1,55 @@
+/* Vaulted Security Dashboard - Professional Theme */
+
+body {
+  background-color: #f5f7fa;
+  color: #2a3e4f;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.navbar {
+  background-color: #ffffff !important;
+  border-bottom: 2px solid #2a3e4f;
+}
+
+.navbar-brand {
+  color: #2a3e4f !important;
+  font-weight: 700;
+  font-size: 1.5rem;
+}
+
+.btn-outline-primary {
+  color: #2a3e4f;
+  border-color: #2a3e4f;
+}
+
+.btn-outline-primary:hover {
+  background-color: #2a3e4f;
+  border-color: #2a3e4f;
+  color: #ffffff;
+}
+
+.badge {
+  background-color: #969696 !important;
+  color: #ffffff !important;
+}
+
+.badge.text-bg-light {
+  background-color: #f0f0f0 !important;
+  color: #2a3e4f !important;
+  border: 1px solid #2a3e4f !important;
+}
+
+.card {
+  border: 1px solid #ddd;
+  border-left: 4px solid #2a3e4f;
+  box-shadow: 0 2px 4px rgba(42, 62, 79, 0.1);
+}
+
+.card-title {
+  color: #2a3e4f;
+  font-weight: 600;
+}
+
 .collection-card-image {
   height: 180px;
 }
@@ -8,8 +60,330 @@
   -webkit-line-clamp: 3;
   -webkit-box-orient: vertical;
   overflow: hidden;
+  color: #555;
 }
 
 .item-detail-image {
   max-height: 320px;
+  border: 2px solid #2a3e4f;
+  border-radius: 4px;
 }
+
+a {
+  color: #2a3e4f;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #969696;
+  text-decoration: underline;
+}
+
+/* Tab buttons styling */
+.tab-buttons {
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.tab-btn {
+  flex: 1;
+  border: 1px solid #2a3e4f !important;
+  color: #2a3e4f;
+  background-color: white;
+  border-left: none;
+  padding: 10px;
+  margin: 0;
+}
+
+.tab-btn:first-child {
+  border-left: 1px solid #2a3e4f !important;
+}
+
+.tab-btn.active {
+  background-color: #2a3e4f !important;
+  color: white !important;
+}
+
+/* Analysis table styling */
+.analysis-table {
+  border-collapse: collapse;
+}
+
+.analysis-table thead {
+  background-color: #f5f7fa;
+  border-bottom: 2px solid #2a3e4f;
+}
+
+.analysis-table th {
+  color: #2a3e4f;
+}
+
+.analysis-table tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+/* Employee card styling */
+.employee-card {
+  border-left: 4px solid #ffa94d;
+}
+
+.employee-card.suspect {
+  border-left: 4px solid #ff6b6b;
+}
+
+.employee-card.under-review {
+  border-left: 4px solid #ffa94d;
+}
+
+/* Dark Mode Styles */
+.dark-mode {
+  background-color: #0d1117;
+  color: #e0e0e0;
+}
+
+.dark-mode body {
+  background-color: #0d1117;
+  color: #e0e0e0;
+}
+
+.dark-mode * {
+  color: #e0e0e0;
+}
+
+.dark-mode .navbar {
+  background-color: #161b22 !important;
+  border-bottom: 2px solid #30363d;
+}
+
+.dark-mode .navbar-brand {
+  color: #e0e0e0 !important;
+}
+
+.dark-mode .btn-outline-primary {
+  color: #e0e0e0;
+  border-color: #30363d;
+}
+
+.dark-mode .btn-outline-primary:hover {
+  background-color: #30363d;
+  border-color: #30363d;
+  color: #e0e0e0;
+}
+
+.dark-mode .card {
+  background-color: #161b22;
+  border-color: #30363d;
+  border-left-color: #58a6ff;
+  color: #e0e0e0;
+}
+
+.dark-mode .card-title {
+  color: #e0e0e0;
+}
+
+.dark-mode .card-text {
+  color: #b0b0b0;
+}
+
+.dark-mode .card-body {
+  color: #e0e0e0;
+}
+
+.dark-mode .collection-description {
+  color: #b0b0b0;
+}
+
+.dark-mode .alert-secondary {
+  background-color: #161b22;
+  border-color: #30363d;
+  color: #e0e0e0;
+}
+
+.dark-mode .alert-danger {
+  background-color: #3d2a2a;
+  border-color: #5a3a3a;
+  color: #ff9999;
+}
+
+.dark-mode .alert-info {
+  background-color: #1a2a3a;
+  border-color: #30363d;
+  color: #88ccff;
+}
+
+.dark-mode .alert-warning {
+  background-color: #3a2a1a;
+  border-color: #5a4a2a;
+  color: #ffcc88;
+}
+
+.dark-mode .table {
+  color: #e0e0e0;
+  border-color: #30363d;
+}
+
+.dark-mode .table thead {
+  background-color: #161b22;
+  border-bottom-color: #30363d;
+}
+
+.dark-mode .table th {
+  color: #e0e0e0;
+  border-color: #30363d;
+}
+
+.dark-mode .table tbody {
+  color: #e0e0e0;
+}
+
+.dark-mode .table tbody tr {
+  border-bottom-color: #30363d;
+}
+
+.dark-mode .table td {
+  color: #e0e0e0;
+}
+
+.dark-mode .badge.text-bg-light {
+  background-color: #30363d !important;
+  color: #e0e0e0 !important;
+  border-color: #30363d !important;
+}
+
+.dark-mode .badge {
+  color: #e0e0e0 !important;
+}
+
+.dark-mode .text-muted {
+  color: #8b949e !important;
+}
+
+.dark-mode h1, .dark-mode h2, .dark-mode h3, .dark-mode h4, .dark-mode h5, .dark-mode h6 {
+  color: #e0e0e0;
+}
+
+.dark-mode p {
+  color: #e0e0e0;
+}
+
+.dark-mode strong {
+  color: #e0e0e0;
+}
+
+.dark-mode label {
+  color: #e0e0e0;
+}
+
+.dark-mode span {
+  color: #e0e0e0;
+}
+
+.dark-mode ul li {
+  color: #e0e0e0;
+}
+
+.dark-mode ol li {
+  color: #e0e0e0;
+}
+
+.dark-mode a {
+  color: #58a6ff;
+}
+
+.dark-mode a:hover {
+  color: #79c0ff;
+}
+
+/* Dark mode tab buttons */
+.dark-mode .tab-buttons {
+  border: 1px solid #30363d;
+}
+
+.dark-mode .tab-btn {
+  border: 1px solid #30363d !important;
+  color: #e0e0e0;
+  background-color: #161b22;
+}
+
+.dark-mode .tab-btn.active {
+  background-color: #30363d !important;
+  color: #e0e0e0 !important;
+}
+
+/* Dark mode analysis table */
+.dark-mode .analysis-table {
+  color: #e0e0e0;
+}
+
+.dark-mode .analysis-table thead {
+  background-color: #161b22;
+  border-bottom: 2px solid #30363d;
+}
+
+.dark-mode .analysis-table th {
+  color: #e0e0e0;
+  background-color: #161b22;
+  border-color: #30363d;
+}
+
+.dark-mode .analysis-table tbody {
+  background-color: transparent;
+}
+
+.dark-mode .analysis-table tbody tr {
+  border-bottom: 1px solid #30363d;
+  background-color: transparent;
+}
+
+.dark-mode .analysis-table tbody td {
+  color: #e0e0e0;
+  background-color: transparent;
+  border-color: #30363d;
+}
+
+.dark-mode .analysis-table small {
+  color: #b0b0b0;
+}
+
+/* Footage review styles */
+.footage-thumb {
+  background-size: cover;
+  background-position: center;
+}
+
+.footage-card .card-body .btn {
+  min-width: 72px;
+}
+
+.viewer-modal {
+  position: fixed;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1050;
+}
+
+.viewer-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+}
+
+.viewer-content {
+  position: relative;
+  width: min(920px, 95%);
+  z-index: 1060;
+}
+
+/* Dark mode for footage */
+.dark-mode .footage-card {
+  background-color: #161b22;
+  border-color: #30363d;
+}
+
+.dark-mode .viewer-content {
+  background-color: #0b0f13;
+  color: #e0e0e0;
+}
+

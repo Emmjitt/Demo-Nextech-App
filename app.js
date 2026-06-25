@@ -3,6 +3,8 @@ import AboutPageComponent from './components/about-page-component.js';
 import NavbarComponent from './components/navbar-component.js';
 import CollectionPageComponent from './components/collection-page-component.js';
 import ItemDetailPageComponent from './components/item-detail-page-component.js';
+import DataAnalysisPageComponent from './components/data-analysis-page-component.js';
+import FootageReviewComponent from './components/footage-review-component.js';
 
 const routes = [
   {
@@ -21,6 +23,14 @@ const routes = [
     path: '/items/:id',
     component: ItemDetailPageComponent,
   },
+  {
+    path: '/footage',
+    component: FootageReviewComponent,
+  },
+  {
+    path: '/analysis',
+    component: DataAnalysisPageComponent,
+  },
 ];
 
 const router = VueRouter.createRouter({
@@ -30,6 +40,31 @@ const router = VueRouter.createRouter({
 
 const app = Vue.createApp({
   setup() {
+    const darkMode = Vue.ref(localStorage.getItem('darkMode') === 'true');
+    
+    const toggleDarkMode = () => {
+      darkMode.value = !darkMode.value;
+      localStorage.setItem('darkMode', darkMode.value);
+    };
+
+    // Watch darkMode and update the DOM class
+    Vue.watch(darkMode, (newValue) => {
+      const appElement = document.getElementById('app');
+      if (newValue) {
+        appElement.classList.add('dark-mode');
+      } else {
+        appElement.classList.remove('dark-mode');
+      }
+    });
+
+    // Set initial dark mode class on mount
+    Vue.onMounted(() => {
+      const appElement = document.getElementById('app');
+      if (darkMode.value) {
+        appElement.classList.add('dark-mode');
+      }
+    });
+
     const itemsStore = Vue.reactive({
       items: [],
       isLoading: true,
@@ -78,8 +113,10 @@ const app = Vue.createApp({
       });
 
     Vue.provide('itemsStore', itemsStore);
+    Vue.provide('darkMode', darkMode);
+    Vue.provide('toggleDarkMode', toggleDarkMode);
 
-    return {};
+    return { darkMode };
   },
 });
 
