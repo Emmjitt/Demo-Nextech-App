@@ -71,13 +71,41 @@ const app = Vue.createApp({
       error: '',
     });
 
-    fetch('items-template.csv')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Could not load CSV data file.');
+    const resolveImageUrl = (value) => {
+      const trimmed = String(value || '').trim();
+      if (!trimmed) {
+        return '';
+      }
+
+      if (/^(https?:|data:|blob:)/i.test(trimmed)) {
+        return trimmed;
+      }
+
+      const baseUrl = window.location.href.includes('#')
+        ? window.location.href.split('#')[0]
+        : window.location.href;
+
+      return new URL(trimmed, baseUrl).toString();
+    };
+
+    const loadCsvData = async () => {
+      const csvFiles = ['items.csv', 'items-template.csv'];
+
+      for (const fileName of csvFiles) {
+        try {
+          const response = await fetch(fileName);
+          if (response.ok) {
+            return await response.text();
+          }
+        } catch (error) {
+          console.warn(`Unable to load ${fileName}:`, error);
         }
-        return response.text();
-      })
+      }
+
+      throw new Error('Could not load CSV data file.');
+    };
+
+    loadCsvData()
       .then((csvText) => {
         Papa.parse(csvText, {
           header: true,
@@ -92,7 +120,7 @@ const app = Vue.createApp({
                 name: String(row.name || '').trim(),
                 description: String(row.description || '').trim(),
                 category: String(row.category || '').trim(),
-                imageUrl: String(row.image_url || '').trim(),
+                imageUrl: resolveImageUrl(row.image_url || row.image || row.imageUrl || ''),
                 location: String(row.location || '').trim(),
               }));
               itemsStore.error = '';

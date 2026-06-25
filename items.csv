@@ -1,0 +1,9 @@
+id,name,description,category,image_url,location
+incident-001,"Unauthorized Keycard Entry","Keycard used 2:47 AM to bypass the south entrance. The card was registered to James Mitchell in facilities.","Access Violation","components/assets/Key Card Access Control.webp","South Entrance"
+incident-002,"Vault Surveillance Gap","Cameras in Vault 4 went offline for six minutes during the incident window. No maintenance log was recorded.","System Failure","components/assets/Control Room.webp","Vault Room 4"
+incident-003,"James Mitchell Timeline","Facilities manager on duty. Badge logs show repeated entries before the incident and a late clock-out.","Investigation Lead","components/assets/James Mitchell Timeline.webp","Main Office"
+incident-004,"Safe Deposit Box Breach","Three boxes in Zone B were accessed and emptied. The locks showed no signs of forced entry.","Evidence","components/assets/Safe Deposit Box Breach.webp","Safe Deposit Area"
+incident-005,"Alarm System Disabled","Motion sensors in the vault wing were disabled at 2:40 AM and required supervisor access codes.","System Failure","components/assets/alarm disabling.webp","Control Room"
+incident-006,"Cash Withdrawal Pattern","Suspicious ATM withdrawals by a low-level employee totaled $45,000 over the previous two weeks.","Investigation Lead","components/assets/Withdrawal Pattern.jpg","ATM Records"
+incident-007,"Vault Door Compromise","The vault door access logs show an unusual sequence during the same period as the breach.","Evidence","components/assets/vault-door.jpg","Vault Entrance"
+incident-008,"Security Timeline","The timeline review highlights several alarms and access changes clustered around the incident.","Investigation Lead","components/assets/Security Timeline.webp","Security Office"
