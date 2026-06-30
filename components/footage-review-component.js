@@ -97,7 +97,11 @@ export default {
       <div v-else class="row g-3 mt-3">
         <div class="col-12 col-md-6 col-lg-4" v-for="clip in filtered" :key="clip.id">
           <div class="card h-100 shadow-sm footage-card">
-            <div class="ratio ratio-16x9 footage-thumb" @click="openViewer(clip)" style="cursor: pointer; background-image: url('{{clip.thumbnail}}'); background-size: cover; background-position: center;"></div>
+            <div
+              class="ratio ratio-16x9 footage-thumb"
+              @click="openViewer(clip)"
+              :style="{ cursor: 'pointer', backgroundImage: 'url(' + clip.thumbnail + ')', backgroundSize: 'cover', backgroundPosition: 'center' }"
+            ></div>
             <div class="card-body d-flex flex-column">
               <div class="d-flex justify-content-between align-items-start mb-2">
                 <h5 class="mb-0">{{ clip.location }}</h5>
