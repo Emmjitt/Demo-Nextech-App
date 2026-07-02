@@ -40,29 +40,98 @@ const router = VueRouter.createRouter({
 
 const app = Vue.createApp({
   setup() {
-    const darkMode = Vue.ref(localStorage.getItem('darkMode') === 'true');
-    
-    const toggleDarkMode = () => {
-      darkMode.value = !darkMode.value;
-      localStorage.setItem('darkMode', darkMode.value);
+    const getStoredDarkMode = () => {
+      try {
+        return localStorage.getItem('darkMode') === 'true';
+      } catch (error) {
+        console.warn('Unable to read dark mode setting:', error);
+        return false;
+      }
     };
 
-    // Watch darkMode and update the DOM class
-    Vue.watch(darkMode, (newValue) => {
+    const persistDarkMode = (value) => {
+      try {
+        localStorage.setItem('darkMode', String(value));
+      } catch (error) {
+        console.warn('Unable to save dark mode setting:', error);
+      }
+    };
+
+    const darkMode = Vue.ref(getStoredDarkMode());
+    const compactMode = Vue.ref(false);
+    // Removed colorInversion feature
+    const settingsOpen = Vue.ref(false);
+
+    const getStoredPreference = (key, fallback = false) => {
+      try {
+        const value = localStorage.getItem(key);
+        return value === null ? fallback : value === 'true';
+      } catch (error) {
+        console.warn(`Unable to read ${key}:`, error);
+        return fallback;
+      }
+    };
+
+    const persistPreference = (key, value) => {
+      try {
+        localStorage.setItem(key, String(value));
+      } catch (error) {
+        console.warn(`Unable to save ${key}:`, error);
+      }
+    };
+
+    const toggleDarkMode = () => {
+      darkMode.value = !darkMode.value;
+      persistDarkMode(darkMode.value);
+    };
+
+    const toggleCompactMode = () => {
+      compactMode.value = !compactMode.value;
+      persistPreference('compactMode', compactMode.value);
+    };
+
+    // Removed toggleColorInversion function
+
+    const applyDarkModeClass = (isDarkMode) => {
       const appElement = document.getElementById('app');
-      if (newValue) {
+      if (!appElement) {
+        return;
+      }
+
+      if (isDarkMode) {
         appElement.classList.add('dark-mode');
       } else {
         appElement.classList.remove('dark-mode');
       }
+    };
+
+    const applyAccessibilityClasses = () => {
+      const appElement = document.getElementById('app');
+      if (!appElement) {
+        return;
+      }
+
+      appElement.classList.toggle('compact-mode', compactMode.value);
+      // Removed color inversion class toggle
+      applyDarkModeClass(darkMode.value);
+    };
+
+    // Watch preferences and update the DOM classes
+    Vue.watch(darkMode, (newValue) => {
+      applyDarkModeClass(newValue);
     });
 
-    // Set initial dark mode class on mount
+    Vue.watch(compactMode, () => {
+      applyAccessibilityClasses();
+    });
+
+    // Removed watch on colorInversion
+
+    // Set initial accessibility classes on mount
     Vue.onMounted(() => {
-      const appElement = document.getElementById('app');
-      if (darkMode.value) {
-        appElement.classList.add('dark-mode');
-      }
+      // Removed colorInversion provide
+      // Removed toggleColorInversion provide
+      applyAccessibilityClasses();
     });
 
     const itemsStore = Vue.reactive({
@@ -142,9 +211,16 @@ const app = Vue.createApp({
 
     Vue.provide('itemsStore', itemsStore);
     Vue.provide('darkMode', darkMode);
+    Vue.provide('compactMode', compactMode);
+    Vue.provide('settingsOpen', settingsOpen);
     Vue.provide('toggleDarkMode', toggleDarkMode);
+    Vue.provide('toggleCompactMode', toggleCompactMode);
+    const setSettingsOpen = (value) => {
+      settingsOpen.value = value;
+    };
+    Vue.provide('setSettingsOpen', setSettingsOpen);
 
-    return { darkMode };
+    return { darkMode, compactMode, settingsOpen, toggleDarkMode, toggleCompactMode, setSettingsOpen };
   },
 });
 

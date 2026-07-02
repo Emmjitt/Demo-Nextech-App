@@ -54,37 +54,37 @@ export default {
               <td><strong>2:35 AM</strong></td>
               <td>James Mitchell enters control room (logged as routine check)</td>
               <td>Control Room</td>
-              <td><span class="badge bg-danger">High</span></td>
+              <td><span class="risk-badge risk-badge--high">High</span></td>
             </tr>
             <tr>
               <td><strong>2:40 AM</strong></td>
               <td>Motion sensors deactivated in Vault Wing</td>
               <td>Vault Wing</td>
-              <td><span class="badge bg-danger">Critical</span></td>
+              <td><span class="risk-badge risk-badge--critical">Critical</span></td>
             </tr>
             <tr>
               <td><strong>2:45 AM</strong></td>
               <td>Vault 4 cameras go offline</td>
               <td>Vault Room 4</td>
-              <td><span class="badge bg-danger">Critical</span></td>
+              <td><span class="risk-badge risk-badge--critical">Critical</span></td>
             </tr>
             <tr>
               <td><strong>2:47 AM</strong></td>
               <td>Unauthorized keycard access (Mitchell's card)</td>
               <td>South Entrance</td>
-              <td><span class="badge bg-danger">Critical</span></td>
+              <td><span class="risk-badge risk-badge--critical">Critical</span></td>
             </tr>
             <tr>
               <td><strong>2:51 AM</strong></td>
               <td>Vault 4 cameras restored (6 min downtime)</td>
               <td>Vault Room 4</td>
-              <td><span class="badge bg-danger">Critical</span></td>
+              <td><span class="risk-badge risk-badge--critical">Critical</span></td>
             </tr>
             <tr>
               <td><strong>3:15 AM</strong></td>
               <td>James Mitchell clocks out</td>
               <td>Main Office</td>
-              <td><span class="badge bg-warning">Medium</span></td>
+              <td><span class="risk-badge risk-badge--medium">Medium</span></td>
             </tr>
           </tbody>
         </table>

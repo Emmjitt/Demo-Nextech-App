@@ -7,6 +7,23 @@ export default {
     const isLoading = Vue.ref(true);
     const error = Vue.ref('');
 
+    const resolveMediaUrl = (value) => {
+      const trimmed = String(value || '').trim();
+      if (!trimmed) {
+        return '';
+      }
+
+      if (/^(https?:|data:|blob:)/i.test(trimmed)) {
+        return trimmed;
+      }
+
+      const baseUrl = window.location.href.includes('#')
+        ? window.location.href.split('#')[0]
+        : window.location.href;
+
+      return new URL(trimmed, baseUrl).toString();
+    };
+
     // Load footage data from CSV
     Vue.onMounted(() => {
       fetch('footage-template.csv')
@@ -30,6 +47,7 @@ export default {
                   time: String(row.time || '').trim(),
                   location: String(row.location || '').trim(),
                   thumbnail: String(row.thumbnail || '').trim(),
+                  thumbnailUrl: resolveMediaUrl(row.thumbnail || ''),
                   flagged: String(row.flagged || 'false').trim() === 'true',
                   notes: String(row.notes || '').trim(),
                 }));
@@ -100,7 +118,7 @@ export default {
             <div
               class="ratio ratio-16x9 footage-thumb"
               @click="openViewer(clip)"
-              :style="{ cursor: 'pointer', backgroundImage: 'url(' + clip.thumbnail + ')', backgroundSize: 'cover', backgroundPosition: 'center' }"
+              :style="{ cursor: 'pointer', backgroundImage: 'url(' + clip.thumbnailUrl + ')', backgroundSize: 'cover', backgroundPosition: 'center' }"
             ></div>
             <div class="card-body d-flex flex-column">
               <div class="d-flex justify-content-between align-items-start mb-2">
@@ -113,7 +131,7 @@ export default {
               <div class="d-flex gap-2">
                 <button class="btn btn-sm btn-outline-primary" @click="openViewer(clip)">View</button>
                 <button class="btn btn-sm btn-outline-secondary" @click="toggleFlag(clip)">{{ clip.flagged ? 'Unflag' : 'Flag' }}</button>
-                <span v-if="clip.flagged" class="ms-auto badge bg-danger align-self-center">Flagged</span>
+                <span v-if="clip.flagged" class="ms-auto badge flagged-badge align-self-center">Flagged</span>
               </div>
             </div>
           </div>
@@ -126,7 +144,7 @@ export default {
         <div class="viewer-content card shadow-lg">
           <button class="btn-close ms-auto" aria-label="Close" @click="closeViewer"></button>
           <div class="ratio ratio-16x9 mb-3">
-            <img :src="viewerItem.thumbnail" alt="footage" class="w-100 h-100 object-fit-cover" />
+            <img :src="viewerItem.thumbnailUrl || viewerItem.thumbnail" alt="footage" class="w-100 h-100 object-fit-cover" />
           </div>
           <div class="p-3">
             <h5>{{ viewerItem.location }} <small class="text-muted">{{ viewerItem.time }}</small></h5>
