@@ -1,0 +1,9 @@
+id,time,location,thumbnail,flagged,notes
+"f-001","2026-06-12 02:45:12","Vault Room 4","https://picsum.photos/seed/footage1/800/450","true","Camera offline during segment; suspicious person in frame."
+"f-002","2026-06-12 02:47:03","South Entrance","https://picsum.photos/seed/footage2/800/450","true","Unauthorized keycard use; person matches badge holder."
+"f-003","2026-06-11 18:12:40","Lobby","https://picsum.photos/seed/footage3/800/450","false","Normal foot traffic."
+"f-004","2026-06-12 01:30:15","Control Room","https://picsum.photos/seed/footage4/800/450","true","Unusual activity; staff member entering without protocol."
+"f-005","2026-06-12 02:50:00","Safe Deposit Area","https://picsum.photos/seed/footage5/800/450","true","Multiple boxes accessed; rapid movement detected."
+"f-006","2026-06-11 22:15:30","Parking Garage","https://picsum.photos/seed/footage6/800/450","false","Employee exit; normal hours."
+"f-007","2026-06-12 02:35:45","Hallway B2","https://picsum.photos/seed/footage7/800/450","true","Figure moving quickly; no ID badge visible."
+"f-008","2026-06-12 03:00:00","Main Lobby","https://picsum.photos/seed/footage8/800/450","false","Security patrol; routine check."

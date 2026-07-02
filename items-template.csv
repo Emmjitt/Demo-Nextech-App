@@ -1,11 +1,9 @@
 id,name,description,category,image_url,location
-coffee-corner,Coffee Corner,Cozy local cafe known for pour-over coffee and fresh pastries,Cafe,https://picsum.photos/seed/coffee-corner/800/600,Main Street
-green-grocer,Green Grocer,Neighborhood produce market with seasonal fruits and vegetables,Grocery,https://picsum.photos/seed/green-grocer/800/600,River District
-book-nook,The Book Nook,Independent bookstore with curated fiction and kids titles,Bookstore,https://picsum.photos/seed/book-nook/800/600,Oak Avenue
-fit-studio,Fit Studio,Small-group fitness classes for beginners and busy professionals,Fitness,https://picsum.photos/seed/fit-studio/800/600,North Plaza
-tech-stop,Tech Stop,Device accessories repair and setup help for phones and laptops,Electronics,https://picsum.photos/seed/tech-stop/800/600,Central Mall
-artisan-bites,Artisan Bites,Handmade sandwiches salads and daily soup specials,Restaurant,https://picsum.photos/seed/artisan-bites/800/600,Market Lane
-pet-haven,Pet Haven,Friendly pet supply shop with food toys and grooming essentials,Pet Store,https://picsum.photos/seed/pet-haven/800/600,Sunset Boulevard
-craft-hub,Craft Hub,Creative supply store for painting journaling and classroom projects,Crafts,https://picsum.photos/seed/craft-hub/800/600,West End
-city-cycles,City Cycles,Urban bike rentals tune-ups and safety gear for all ages,Sports,https://picsum.photos/seed/city-cycles/800/600,Hillside
-home-glow,Home Glow,Simple decor and lighting picks for dorms apartments and homes,Home,https://picsum.photos/seed/home-glow/800/600,Lakeside
+incident-001,"Unauthorized Keycard Entry","Keycard used 2:47 AM to bypass south entrance. Card registered to James Mitchell (Facilities). Unusual time and high-security protocol bypass.","Access Violation","https://picsum.photos/seed/incident-keycard/800/600","South Entrance"
+incident-002,"Vault Surveillance Gap","Cameras offline in Vault 4 for 6 minutes. Maintenance logs show no scheduled work. Critical security failure.","System Failure","https://picsum.photos/seed/incident-camera/800/600","Vault Room 4"
+incident-003,"James Mitchell Timeline","Facilities Manager on duty. Badge access records show multiple entries that night. Last clocked out at 3:15 AM.","Investigation Lead","https://picsum.photos/seed/incident-profile/800/600","Main Office"
+incident-004,"Safe Deposit Box Breach","Three boxes in Zone B accessed and emptied during the incident. Locks show no signs of forced entry. Suggests inside knowledge.","Evidence","https://picsum.photos/seed/incident-safe/800/600","Safe Deposit Area"
+incident-005,"Alarm System Disabled","Motion sensors in Vault Wing deactivated at 2:40 AM. Requires supervisor access codes. Only 3 staff members have clearance.","System Failure","https://picsum.photos/seed/incident-alarm/800/600","Control Room"
+incident-006,"Security Guard Shift Report","Security chief reports unusual behavior from Officer Daniel Torres earlier that week. Check-in records show he left post at 2:30 AM.","Investigation Lead","https://picsum.photos/seed/incident-guard/800/600","Security Office"
+incident-007,"Maintenance Access Log","James Mitchell signed in to control room at 2:35 AM under routine check. Previous shift manager unavailable for comment.","Evidence","https://picsum.photos/seed/incident-log/800/600","Control Room"
+incident-008,"Cash Withdrawal Pattern","Suspicious ATM withdrawals by low-level employee (Sarah Chen) totaling $45000 in past 2 weeks. May indicate financial motive or involvement.","Investigation Lead","https://picsum.photos/seed/incident-pattern/800/600","ATM Records"

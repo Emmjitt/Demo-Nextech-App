@@ -1,21 +1,20 @@
-# Specification: [Your App Idea Name]
+# Specification: [Vaulted, bank security and managment.]
 
-App description: [Write a one or two sentences describing what your app does and who it’s for.]
+App description: [Vaulted is a security dashboard app for bank security agents and managment. The app allows them to log, track, and review incidents.]
 
 ## Style and Theme
 
-[Describe the look and feel of your app.] 
+[Clean oragnized feel that makes the user interface easy to navigate, corporate/professional color scheme, different sections and organizational tabs to keep different tasks and items seperate] 
 
 Overall mood:
-Examples: fun and playful, calm and professional, bold and energetic, etc.
-
+Professional, Calm, Secure, Clean, Modern
 Use the *style-guide.html* for details on styling -- fonts, colors, and layout.
 
 ## User Scenarios
 
 ### Story 1 (most important)
 
-[Write 1-2 sentences. Who is using the app, what do they want to do, and what do they see when it works? Write it like you are describing it to a friend.]
+[A bank security manager recently had an incident where a criminal was able to get a hold of a staff keycard and bypass security systems allowing them to rob the bank from the inside. The security manager wants to aid in the investigation and figure out who did it, the bank security manager is able to view different tabs with security footage, details and data logged from the incident, patterns that may have shifted around or during the time of the incident, and security systems or measurments that failed or were compromised.]
 
 ---
 

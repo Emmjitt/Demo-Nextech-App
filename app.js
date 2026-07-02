@@ -3,6 +3,8 @@ import AboutPageComponent from './components/about-page-component.js';
 import NavbarComponent from './components/navbar-component.js';
 import CollectionPageComponent from './components/collection-page-component.js';
 import ItemDetailPageComponent from './components/item-detail-page-component.js';
+import DataAnalysisPageComponent from './components/data-analysis-page-component.js';
+import FootageReviewComponent from './components/footage-review-component.js';
 
 const routes = [
   {
@@ -21,6 +23,14 @@ const routes = [
     path: '/items/:id',
     component: ItemDetailPageComponent,
   },
+  {
+    path: '/footage',
+    component: FootageReviewComponent,
+  },
+  {
+    path: '/analysis',
+    component: DataAnalysisPageComponent,
+  },
 ];
 
 const router = VueRouter.createRouter({
@@ -30,19 +40,141 @@ const router = VueRouter.createRouter({
 
 const app = Vue.createApp({
   setup() {
+    const getStoredDarkMode = () => {
+      try {
+        return localStorage.getItem('darkMode') === 'true';
+      } catch (error) {
+        console.warn('Unable to read dark mode setting:', error);
+        return false;
+      }
+    };
+
+    const persistDarkMode = (value) => {
+      try {
+        localStorage.setItem('darkMode', String(value));
+      } catch (error) {
+        console.warn('Unable to save dark mode setting:', error);
+      }
+    };
+
+    const darkMode = Vue.ref(getStoredDarkMode());
+    const compactMode = Vue.ref(false);
+    // Removed colorInversion feature
+    const settingsOpen = Vue.ref(false);
+
+    const getStoredPreference = (key, fallback = false) => {
+      try {
+        const value = localStorage.getItem(key);
+        return value === null ? fallback : value === 'true';
+      } catch (error) {
+        console.warn(`Unable to read ${key}:`, error);
+        return fallback;
+      }
+    };
+
+    const persistPreference = (key, value) => {
+      try {
+        localStorage.setItem(key, String(value));
+      } catch (error) {
+        console.warn(`Unable to save ${key}:`, error);
+      }
+    };
+
+    const toggleDarkMode = () => {
+      darkMode.value = !darkMode.value;
+      persistDarkMode(darkMode.value);
+    };
+
+    const toggleCompactMode = () => {
+      compactMode.value = !compactMode.value;
+      persistPreference('compactMode', compactMode.value);
+    };
+
+    // Removed toggleColorInversion function
+
+    const applyDarkModeClass = (isDarkMode) => {
+      const appElement = document.getElementById('app');
+      if (!appElement) {
+        return;
+      }
+
+      if (isDarkMode) {
+        appElement.classList.add('dark-mode');
+      } else {
+        appElement.classList.remove('dark-mode');
+      }
+    };
+
+    const applyAccessibilityClasses = () => {
+      const appElement = document.getElementById('app');
+      if (!appElement) {
+        return;
+      }
+
+      appElement.classList.toggle('compact-mode', compactMode.value);
+      // Removed color inversion class toggle
+      applyDarkModeClass(darkMode.value);
+    };
+
+    // Watch preferences and update the DOM classes
+    Vue.watch(darkMode, (newValue) => {
+      applyDarkModeClass(newValue);
+    });
+
+    Vue.watch(compactMode, () => {
+      applyAccessibilityClasses();
+    });
+
+    // Removed watch on colorInversion
+
+    // Set initial accessibility classes on mount
+    Vue.onMounted(() => {
+      // Removed colorInversion provide
+      // Removed toggleColorInversion provide
+      applyAccessibilityClasses();
+    });
+
     const itemsStore = Vue.reactive({
       items: [],
       isLoading: true,
       error: '',
     });
 
-    fetch('items-template.csv')
-      .then((response) => {
-        if (!response.ok) {
-          throw new Error('Could not load CSV data file.');
+    const resolveImageUrl = (value) => {
+      const trimmed = String(value || '').trim();
+      if (!trimmed) {
+        return '';
+      }
+
+      if (/^(https?:|data:|blob:)/i.test(trimmed)) {
+        return trimmed;
+      }
+
+      const baseUrl = window.location.href.includes('#')
+        ? window.location.href.split('#')[0]
+        : window.location.href;
+
+      return new URL(trimmed, baseUrl).toString();
+    };
+
+    const loadCsvData = async () => {
+      const csvFiles = ['items.csv', 'items-template.csv'];
+
+      for (const fileName of csvFiles) {
+        try {
+          const response = await fetch(fileName);
+          if (response.ok) {
+            return await response.text();
+          }
+        } catch (error) {
+          console.warn(`Unable to load ${fileName}:`, error);
         }
-        return response.text();
-      })
+      }
+
+      throw new Error('Could not load CSV data file.');
+    };
+
+    loadCsvData()
       .then((csvText) => {
         Papa.parse(csvText, {
           header: true,
@@ -57,7 +189,7 @@ const app = Vue.createApp({
                 name: String(row.name || '').trim(),
                 description: String(row.description || '').trim(),
                 category: String(row.category || '').trim(),
-                imageUrl: String(row.image_url || '').trim(),
+                imageUrl: resolveImageUrl(row.image_url || row.image || row.imageUrl || ''),
                 location: String(row.location || '').trim(),
               }));
               itemsStore.error = '';
@@ -78,8 +210,17 @@ const app = Vue.createApp({
       });
 
     Vue.provide('itemsStore', itemsStore);
+    Vue.provide('darkMode', darkMode);
+    Vue.provide('compactMode', compactMode);
+    Vue.provide('settingsOpen', settingsOpen);
+    Vue.provide('toggleDarkMode', toggleDarkMode);
+    Vue.provide('toggleCompactMode', toggleCompactMode);
+    const setSettingsOpen = (value) => {
+      settingsOpen.value = value;
+    };
+    Vue.provide('setSettingsOpen', setSettingsOpen);
 
-    return {};
+    return { darkMode, compactMode, settingsOpen, toggleDarkMode, toggleCompactMode, setSettingsOpen };
   },
 });
 
