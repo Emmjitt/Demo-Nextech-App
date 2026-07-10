@@ -1,41 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Portfolio</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #f5f7fa;
-      color: #2a3e4f;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      height: 100vh;
-      margin: 0;
-    }
-    h1 {
-      margin-bottom: 1rem;
-    }
-    a.button {
-      display: inline-block;
-      padding: 0.75rem 1.5rem;
-      background-color: #2a3e4f;
-      color: white;
-      text-decoration: none;
-      border-radius: 0.5rem;
-      font-weight: bold;
-      transition: background-color 0.3s ease;
-    }
-    a.button:hover {
-      background-color: #1f2a38;
-    }
-  </style>
-</head>
-<body>
-  <h1>My Portfolio</h1>
-  <a href="../index.html#about" class="button">About The Developer</a>
-</body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Emmitt Black | Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand" aria-label="EB Logo">
+          <img src="images/EB-Logo.png" alt="EB Logo" class="brand-logo" />
+        </div>
+        <nav class="nav-links" aria-label="Primary">
+          <a class="active" href="portfolio.html">Home</a>
+          <a href="about.html">About</a>
+          <a href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+          <a
+            class="nav-airplane"
+            href="https://earth.google.com/web/@40.24280342,-85.40808171,8867.42839508a,0d,60y,360h,90.000197t,-0r/data=CgRCAggBMikKJwolCiExeGZ5LUFpcUcyNHNvbVRIT1h3SWdGYkV4cWdqVVBkdWIgAToDCgEwQgIIAEoICJLSgtkEEAFiAggB?hl=en_US"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Explore My Home Airport in Google Earth"
+            title="Explore My Home Airport"
+          >
+            <span class="nav-airplane-icon" aria-hidden="true">🛫</span>
+          </a>
+        </nav>
+      </header>
+
+      <main>
+        <section class="hero">
+          <div class="hero-copy">
+            <p class="eyebrow">Builder · Problem solver · Team leader</p>
+            <h1>I bring technical skill, calm leadership, and a strong work ethic to every project.</h1>
+            <p>I’m Emmitt Black, and I’m passionate about coding, computers, presentations, and helping teams work well together. I enjoy turning ideas into polished results with focus and purpose.</p>
+            <div class="hero-actions">
+              <a class="btn btn-primary" href="projects.html">View Projects</a>
+              <a class="btn btn-secondary" href="contact.html">Let’s Talk</a>
+            </div>
+            <ul class="hero-highlights">
+              <li>Coding</li>
+              <li>Computer building</li>
+              <li>Presentation skills</li>
+              <li>Team leadership</li>
+            </ul>
+          </div>
+
+          <aside class="hero-card hero-card--portrait">
+            <div class="portrait-slot">
+              <div class="portrait-frame">
+                <span class="portrait-label">Portrait Image Placeholder</span>
+              </div>
+            </div>
+            <div>
+              <p class="hero-card__label">Outside of work</p>
+              <p class="hero-card__text">I enjoy time with friends and family, building computers, and flying airplanes.</p>
+            </div>
+          </aside>
+        </section>
+
+        <section class="section-card">
+          <div class="section-heading">
+            <h2>Highlights</h2>
+            <p>Focused on quality, balance, and lasting impact.</p>
+          </div>
+          <div class="grid-two">
+            <article class="about-card">
+              <h3>Built for people</h3>
+              <p>I focus on creating solutions that are useful, clear, and welcoming, whether I’m writing code or leading a team through a project.</p>
+            </article>
+            <article class="info-card">
+              <h3>Driven by curiosity</h3>
+              <p>I enjoy learning quickly, solving practical problems, and bringing a calm, dependable presence to everything I do.</p>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer>© 2026 Emmitt Black • Designed with clarity and calm.</footer>
+    </div>
+  </body>
 </html>

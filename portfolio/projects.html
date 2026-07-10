@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Projects | Emmitt Black</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <a class="brand" href="portfolio.html" aria-label="EB Logo">
+          <img src="images/EB-Logo.png" alt="EB Logo" class="brand-logo" />
+        </a>
+        <nav class="nav-links">
+          <a href="portfolio.html">Home</a>
+          <a href="about.html">About</a>
+          <a class="active" href="projects.html">Projects</a>
+          <a href="contact.html">Contact</a>
+        </nav>
+      </header>
+
+      <main class="page-content">
+        <section class="section-card project-showcase-card">
+          <div class="section-heading">
+            <h2>Selected work</h2>
+            <p>A curated view of projects shaped by focus, teamwork, and design.</p>
+          </div>
+
+          <div class="project-showcase" aria-label="Project showcase">
+            <div class="project-stage">
+              <article class="project-slide is-active" data-project="0">
+                <div class="project-slide__content">
+                  <p class="eyebrow">01 / Custom systems</p>
+                  <h3>Custom Computer Builds</h3>
+                  <p>Designed and refined dependable computer systems with performance, organization, and long-term usability in mind.</p>
+                  <ul>
+                    <li>Careful planning and component selection</li>
+                    <li>Strong attention to reliability and clarity</li>
+                    <li>Practical problem solving under pressure</li>
+                  </ul>
+                  <div class="tag-list">
+                    <span class="tag">Hardware</span>
+                    <span class="tag">Performance</span>
+                    <span class="tag">Problem-solving</span>
+                  </div>
+                </div>
+                <div class="project-slide__visual">
+                  <div class="visual-orb"></div>
+                  <div class="visual-pill">Built for speed</div>
+                </div>
+              </article>
+
+              <article class="project-slide" data-project="1">
+                <div class="project-slide__content">
+                  <p class="eyebrow">02 / Team leadership</p>
+                  <h3>Leadership & Teamwork</h3>
+                  <p>Helping teams stay aligned, communicate clearly, and produce strong results through calm guidance and shared focus.</p>
+                  <ul>
+                    <li>Steady leadership in group settings</li>
+                    <li>Clear communication and collaboration</li>
+                    <li>Supportive, dependable team presence</li>
+                  </ul>
+                  <div class="tag-list">
+                    <span class="tag">Leadership</span>
+                    <span class="tag">Teamwork</span>
+                    <span class="tag">Communication</span>
+                  </div>
+                </div>
+                <div class="project-slide__visual">
+                  <div class="visual-orb visual-orb--emerald"></div>
+                  <div class="visual-pill">Built for trust</div>
+                </div>
+              </article>
+
+              <article class="project-slide" data-project="2">
+                <div class="project-slide__content">
+                  <p class="eyebrow">03 / Clear storytelling</p>
+                  <h3>Presentation Projects</h3>
+                  <p>Transforming ideas into polished presentations that feel structured, engaging, and easy for audiences to follow.</p>
+                  <ul>
+                    <li>Thoughtful storytelling and pacing</li>
+                    <li>Clean visual structure and flow</li>
+                    <li>Strong audience connection and confidence</li>
+                  </ul>
+                  <div class="tag-list">
+                    <span class="tag">Presentations</span>
+                    <span class="tag">Planning</span>
+                    <span class="tag">Design</span>
+                  </div>
+                </div>
+                <div class="project-slide__visual">
+                  <div class="visual-orb visual-orb--blue"></div>
+                  <div class="visual-pill">Built for impact</div>
+                </div>
+              </article>
+
+              <article class="project-slide" data-project="3">
+                <div class="project-slide__content">
+                  <p class="eyebrow">04 / Aviation perspective</p>
+                  <h3>Cessna Flight Experience</h3>
+                  <p>Flying Cessna aircraft has strengthened my ability to stay composed, think clearly, and make disciplined decisions under pressure. It has also sharpened my focus on safety, preparation, and teamwork.</p>
+                  <ul>
+                    <li>Calm decision-making in fast-moving situations</li>
+                    <li>Attention to detail and procedure</li>
+                    <li>Confidence built through practice, responsibility, and trust</li>
+                  </ul>
+                  <div class="tag-list">
+                    <span class="tag">Aviation</span>
+                    <span class="tag">Leadership</span>
+                    <span class="tag">Focus</span>
+                  </div>
+                </div>
+                <div class="project-slide__visual">
+                  <div class="visual-orb visual-orb--violet"></div>
+                  <div class="visual-pill">Built for calm</div>
+                </div>
+              </article>
+            </div>
+
+            <div class="carousel-controls">
+              <button class="carousel-btn" type="button" data-direction="prev" aria-label="Previous project">←</button>
+              <div class="carousel-dots" aria-label="Project indicators">
+                <button class="dot active" type="button" data-index="0" aria-label="Show project 1"></button>
+                <button class="dot" type="button" data-index="1" aria-label="Show project 2"></button>
+                <button class="dot" type="button" data-index="2" aria-label="Show project 3"></button>
+                <button class="dot" type="button" data-index="3" aria-label="Show project 4"></button>
+              </div>
+              <button class="carousel-btn" type="button" data-direction="next" aria-label="Next project">→</button>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <footer>© 2026 Emmitt Black • Designed with clarity and calm.</footer>
+    </div>
+    <script src="projects.js"></script>
+  </body>
+</html>

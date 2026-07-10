@@ -23,7 +23,7 @@ export default {
     <aside class="sidebar-nav" :class="darkMode ? 'navbar-dark' : 'navbar-light'" @mouseleave="setSettingsOpen(false)">
       <div class="sidebar-nav__header">
         <i class="bi bi-shield-lock"></i>
-        <span class="sidebar-nav__brand-text">Vaulted Security</span>
+        <img src="../portfolio/images/EB-Logo.png" alt="EB Logo" class="sidebar-nav__brand-logo" />
       </div>
 
       <div class="sidebar-nav__links">
@@ -46,10 +46,10 @@ export default {
       </div>
 
       <div class="sidebar-nav__links sidebar-nav__links--bottom">
-        <router-link class="sidebar-nav__link" to="/about">
+        <a class="sidebar-nav__link" href="./portfolio/portfolio.html" target="_blank" rel="noopener noreferrer">
           <i class="bi bi-info-circle"></i>
           <span class="sidebar-nav__label">About The Developer</span>
-        </router-link>
+        </a>
         <button
           @click="setSettingsOpen(!settingsOpen)"
           class="sidebar-nav__button"
