@@ -23,7 +23,6 @@ export default {
     <aside class="sidebar-nav" :class="darkMode ? 'navbar-dark' : 'navbar-light'" @mouseleave="setSettingsOpen(false)">
       <div class="sidebar-nav__header">
         <i class="bi bi-shield-lock"></i>
-        <img src="../portfolio/images/EB-Logo.png" alt="EB Logo" class="sidebar-nav__brand-logo" />
       </div>
 
       <div class="sidebar-nav__links">

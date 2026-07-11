@@ -115,11 +115,6 @@ export default {
       <div v-else class="row g-3 mt-3">
         <div class="col-12 col-md-6 col-lg-4" v-for="clip in filtered" :key="clip.id">
           <div class="card h-100 shadow-sm footage-card">
-            <div
-              class="ratio ratio-16x9 footage-thumb"
-              @click="openViewer(clip)"
-              :style="{ cursor: 'pointer', backgroundImage: 'url(' + clip.thumbnailUrl + ')', backgroundSize: 'cover', backgroundPosition: 'center' }"
-            ></div>
             <div class="card-body d-flex flex-column">
               <div class="d-flex justify-content-between align-items-start mb-2">
                 <h5 class="mb-0">{{ clip.location }}</h5>
@@ -143,9 +138,6 @@ export default {
         <div class="viewer-backdrop" @click="closeViewer"></div>
         <div class="viewer-content card shadow-lg">
           <button class="btn-close ms-auto" aria-label="Close" @click="closeViewer"></button>
-          <div class="ratio ratio-16x9 mb-3">
-            <img :src="viewerItem.thumbnailUrl || viewerItem.thumbnail" alt="footage" class="w-100 h-100 object-fit-cover" />
-          </div>
           <div class="p-3">
             <h5>{{ viewerItem.location }} <small class="text-muted">{{ viewerItem.time }}</small></h5>
             <p class="small text-muted">{{ viewerItem.notes }}</p>

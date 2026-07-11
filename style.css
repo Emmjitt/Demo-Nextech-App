@@ -70,6 +70,14 @@ main {
   flex-shrink: 0;
 }
 
+.sidebar-nav__brand-logo {
+  width: 32px;
+  height: 32px;
+  flex-shrink: 0;
+  object-fit: contain;
+  display: block;
+}
+
 .sidebar-nav__brand-text,
 .sidebar-nav__label {
   opacity: 0;
@@ -217,7 +225,6 @@ main {
   background-color: #991b1b !important; /* solid dark red */
   color: #fee2e2 !important; /* light text */
   border-color: #7f1d1d !important;
-}
 }
 
 .navbar-brand {
