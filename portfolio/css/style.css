@@ -1,3 +1,12 @@
+/* Center images in project slides with border radius */
+.centered-image {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
 :root {
   --bg: #060b0c;
   --surface: #10171b;
@@ -1348,4 +1357,7 @@ footer {
   .sidebar-nav__brand-logo {
     height: 32px;
   }
+}
+.portrait-image {
+border-radius:20px;
 }
