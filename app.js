@@ -5,8 +5,6 @@ import CollectionPageComponent from './components/collection-page-component.js';
 import ItemDetailPageComponent from './components/item-detail-page-component.js';
 import DataAnalysisPageComponent from './components/data-analysis-page-component.js';
 import FootageReviewComponent from './components/footage-review-component.js';
-
-
 const routes = [
   {
     path: '/',
@@ -226,7 +224,7 @@ const app = Vue.createApp({
 });
 
 
-app.component('projects-page-component', ProjectsPageComponent);
+
 app.component('navbar-component', NavbarComponent);
 
 app.use(router);
