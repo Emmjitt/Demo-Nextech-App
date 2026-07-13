@@ -5,7 +5,7 @@ import CollectionPageComponent from './components/collection-page-component.js';
 import ItemDetailPageComponent from './components/item-detail-page-component.js';
 import DataAnalysisPageComponent from './components/data-analysis-page-component.js';
 import FootageReviewComponent from './components/footage-review-component.js';
-import ProjectsPageComponent from './components/projects-page-component.js';
+
 
 const routes = [
   {
@@ -27,10 +27,6 @@ const routes = [
   {
     path: '/footage',
     component: FootageReviewComponent,
-  },
-  {
-    path: '/projects',
-    component: ProjectsPageComponent,
   },
   {
     path: '/analysis',
