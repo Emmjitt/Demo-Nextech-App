@@ -1,3 +1,34 @@
+/* Styles for the toggle about button matching light and dark mode */
+.toggle-about-btn {
+  margin-top: 1rem;
+  padding: 0.5rem 1rem;
+  font-size: 1rem;
+  font-weight: 600;
+  border: 2px solid #2a3e4f;
+  border-radius: 4px;
+  background-color: #f0f4f8;
+  color: #2a3e4f;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.toggle-about-btn:hover {
+  background-color: #2a3e4f;
+  color: white;
+}
+
+@media (prefers-color-scheme: dark) {
+  .toggle-about-btn {
+    background-color: #2a3e4f;
+    color: #f0f4f8;
+    border-color: #f0f4f8;
+  }
+
+  .toggle-about-btn:hover {
+    background-color: #f0f4f8;
+    color: #2a3e4f;
+  }
+}
 .sidebar-nav__links--bottom {
   display: flex;
   flex-direction: column;
